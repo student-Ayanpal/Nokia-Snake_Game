@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nokia Snake Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="background" id="bubble-container"></div>
+
+<div id="start-screen">
+  <h1>Nokia Snake Game</h1>
+  <p id="level-label">Choose Level</p>
+  <select id="level">
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+  </select>
+  <br>
+  <button onclick="startGame()">Start Game</button>
+</div>
+
+<div id="game-screen">
+  <button id="pauseBtn" onclick="togglePause()">Pause</button>
+  <canvas id="gameCanvas" width="300" height="300"></canvas>
+  <div id="score">Score: 0</div>
+  <div id="special-bug"></div>
+  <div id="controls">
+    <button class="btn" style="grid-column: 2" onclick="changeDirection('up')">⬆️</button>
+    <button class="btn" style="grid-column: 1" onclick="changeDirection('left')">⬅️</button>
+    <button class="btn" style="grid-column: 2" onclick="changeDirection('down')">⬇️</button>
+    <button class="btn" style="grid-column: 3" onclick="changeDirection('right')">➡️</button>
+  </div>
+  <div id="keyboard-hint">You can use your keyboard's arrow key also</div>
+</div>
+
+<div id="game-over-screen" style="display: none">
+  <h2>Game Over!</h2>
+  <div id="final-score"></div>
+  <div id="feedback-message"></div>
+  <button onclick="resetGame()">Play Again</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
